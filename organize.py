@@ -12,7 +12,7 @@ def offset(d, hours):
     # This is hacky, and I am ashamed.
     assert -23 <= hours <= 23
     new_hour = d.hour + hours
-    replaced = d.replace(hour=new_hour % 23)
+    replaced = d.replace(hour=new_hour % 24)
     one_day = datetime.timedelta(1)
     if new_hour > 23:
         return replaced + one_day
